@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+$mainColor: #222;
+$width: 4px;
+.container {
+  width: 1000px;
+  margin: 20px auto;
+  .header {
+    background-color: #eee;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    .word-category {
+      span {
+        color: #009292;
+      }
+    }
+  }
+  .system-game {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    .start {
+      background-color: #009292;
+      color: white;
+      padding: 5px 10px;
+      font-size: 20px;
+      border-radius: 15px;
+      margin-left: 8px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .category-select {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .nationality-select {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      display: none;
+    }
+    .selectors {
+      background-color: #009292;
+      color: white;
+      padding: 5px 10px;
+      font-size: 20px;
+      border-radius: 10px;
+      margin-left: 8px;
+      & span,
+      p {
+        padding: 5px;
+        user-select: none;
+        cursor: pointer;
+        &:not(:last-child) {
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+    span:not(:first-child) {
+      display: none;
+      &.block {
+        display: block;
+      }
+    }
+  }
+  hr {
+    border: 2px solid #eee;
+  }
+  .game-box {
+    display: flex;
+    align-items: center;
+    .hangman-draw {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.wrong-1 .draw {
+        display: block;
+      }
+      &.wrong-2 .draw .the-stand {
+        display: block;
+      }
+      &.wrong-3 .draw .the-hang {
+        display: block;
+      }
+      &.wrong-4 .draw .the-rope {
+        display: block;
+      }
+      &.wrong-5 .draw .the-man .head {
+        display: block;
+      }
+      &.wrong-6 .draw .the-man .body {
+        display: block;
+      }
+      &.wrong-7 .draw .the-man .arms {
+        display: block;
+      }
+      &.wrong-8 .draw .the-man .legs {
+        display: block;
+      }
+      .draw {
+        position: relative;
+        width: 60px;
+        height: 280px;
+        border-bottom: $width solid $mainColor;
+        display: none;
+        .the-stand {
+          position: absolute;
+          height: 200px;
+          width: $width;
+          background-color: $mainColor;
+          top: 80px;
+          left: 30px;
+          display: none;
+        }
+        .the-hang {
+          background-color: $mainColor;
+          height: $width;
+          position: absolute;
+          width: 100px;
+          left: 30px;
+          top: 100px;
+          display: none;
+          &::after {
+            content: "";
+            width: $width;
+            height: 30px;
+            background-color: $mainColor;
+            position: absolute;
+            left: 100px;
+          }
+        }
+        .the-rope {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 3px dotted $mainColor;
+          left: 106px;
+          top: 130px;
+          display: none;
+        }
+        .the-man {
+          .head {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: $width solid $mainColor;
+            left: 114px;
+            top: 136px;
+            display: none;
+          }
+          .body {
+            position: absolute;
+            height: 80px;
+            width: $width;
+            background-color: $mainColor;
+            left: 130px;
+            top: 170px;
+            display: none;
+          }
+          .arms {
+            display: none;
+            &::after,
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: $mainColor;
+              width: 30px;
+              height: $width;
+            }
+            &::after {
+              left: 130px;
+              top: 200px;
+              transform: rotate(-30deg);
+            }
+            &::before {
+              left: 102px;
+              top: 200px;
+              transform: rotate(30deg);
+            }
+          }
+          .legs {
+            display: none;
+            &::after,
+            &::before {
+              content: "";
+              position: absolute;
+              background-color: $mainColor;
+              width: 30px;
+              height: $width;
+            }
+            &::after {
+              left: 130px;
+              top: 255px;
+              transform: rotate(30deg);
+            }
+            &::before {
+              left: 102px;
+              top: 255px;
+              transform: rotate(-30deg);
+            }
+          }
+        }
+      }
+    }
+    .letters {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      &.finished {
+        pointer-events: none;
+      }
+      .letter {
+        width: 40px;
+        height: 40px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #009292;
+        margin: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+        &.clicked {
+          pointer-events: none;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+  .letter-guss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      font-weight: bold;
+      padding: 10px 15px;
+      margin: 5px;
+      border-bottom: 3px solid $mainColor;
+      &.white-span {
+        background: none;
+        border: none;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: $width;
+          background-color: $mainColor;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+.pop {
+  position: fixed;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #009292;
+  padding: 30px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.6;
+}

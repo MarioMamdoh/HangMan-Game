@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn JavaScript</title>
+    <link rel="stylesheet" href="css/Main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="name-game">HangMan</div>
+        <div class="word-category">Word From : <span></span></div>
+      </div>
+      <hr />
+      <div class="system-game">
+        <div class="category-select">
+          Choose The Category :
+          <div class="select-box">
+            <div class="selectors">
+              <p class="select-cat">Select</p>
+              <span>Random</span>
+              <span>Scientists</span>
+              <span>Movies</span>
+              <span>Programming</span>
+              <span>Countries</span>
+              <span>Actors</span>
+            </div>
+          </div>
+        </div>
+        <div class="nationality-select">
+          The Nationality :
+          <div class="select-box">
+            <div class="selectors">
+              <p class="select-nat">Select</p>
+              <span>Random-Nationality</span>
+              <span>Egypt</span>
+            </div>
+          </div>
+        </div>
+        <div class="start">Start Game</div>
+      </div>
+      <hr />
+      <div class="game-box">
+        <div class="hangman-draw">
+          <div class="draw">
+            <div class="the-stand"></div>
+            <div class="the-hang"></div>
+            <div class="the-rope"></div>
+            <div class="the-man">
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="arms"></div>
+              <div class="legs"></div>
+            </div>
+          </div>
+        </div>
+        <div class="letters"></div>
+      </div>
+      <hr />
+      <div class="letter-guss"></div>
+    </div>
+    <audio src="negative_beeps-6008.mp3" id="fail" preload="auto"></audio>
+    <audio
+      src="short-success-sound-glockenspiel-treasure-video-game-6346.mp3"
+      id="success"
+      preload="auto"
+    ></audio>
+    <script src="Main.js"></script>
+  </body>
+</html>

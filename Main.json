@@ -1,0 +1,18 @@
+[
+  {
+    "Scientists":{
+      "Egypt":["Ahmed Zewail","Farouk El-Baz","Magdi Yacoub","Sameera Moussa","Rashad Khalifa","Mohamed El-Naggar","Samir Okasha","Moustafa Abdel Malek","Hamed Ammar","Mohamed El-Sayed Selim"],
+      "Random-Nationality":["Marie Curie","Albert Einstein","Isaac Newton","Rosalind Franklin","Galileo Galilei"]
+    },
+    "Movies":{
+      "Egypt":["Ibrahim Labyad","El Gezirah","Wlad Rizk","The Blue Elephant","Yacoubian Building","El Ghasala","Les Baghdad","El Basha Telmeez","El Talata Yashtaghaloonaha","Morgan Ahmed Morgan"],
+      "Random-Nationality":["The Godfather","Inception","The Dark Knight","The Matrix","The Lord of the Rings","The Lion King","Gladiator","Interstellar","La La Land","Parasite"]
+    },
+    "Programming":["Python","Java","JavaScript","Ruby","Swift","Go","PHP","Rust"],
+    "Countries":["United States","Canada","Brazil","Germany","Japan","Australia","India","France","South Africa","Italy","Egypt","United Arab Emirates","Jordan","Lebanon","Saudi Arabia"],
+    "Actors":{
+      "Egypt":["Omar Sharif","Adel Imam","Mahmoud Abdel Aziz","Yousra","Ahmed Zaki","Hassan El Raddad","Sherine Reda","Nelly","Ezzat El Alaily","Sawsan Badr"],
+      "Random-Nationality":["Will Smith","Tom Hanks","Tom Hanks","Angelina Jolie","Scarlett Johansson","Leonardo DiCaprio","Robert De Niro"]
+    }
+  }
+]
